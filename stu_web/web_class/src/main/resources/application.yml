@@ -1,0 +1,12 @@
+dubbo:
+  application:
+    name: class-service
+  registry:
+    address: zookeeper://192.168.211.128:2181
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///db_class?serverTimezone=GMT%2B8
+    username: root
+    password: root
