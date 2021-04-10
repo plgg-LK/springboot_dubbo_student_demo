@@ -4,6 +4,7 @@ package com.itkk.serviceimpl;/*
 */
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.alibaba.dubbo.config.annotation.Service;
 import com.itkk.dao.IstuMapper;
 import com.itkk.entity.Classes;
 import com.itkk.entity.Student;
@@ -12,6 +13,7 @@ import com.itkk.service.IStuService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
+@Service
 public class StuServiceImpl implements IStuService {
 
   @Autowired
@@ -29,6 +31,19 @@ public class StuServiceImpl implements IStuService {
     return studentList;
   }
 
+  @Override
+  public void addStudent(Student student) {
+    int insert = istuMapper.insert(student);
+    if (insert>0){
+      iClassService.updateByCid(student.getCid());
+    }
+
+  }
+
+  @Override
+  public void deleteById(Integer id) {
+    int i = istuMapper.deleteById(id);
+  }
 
 
 }

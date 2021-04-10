@@ -9,4 +9,5 @@ import java.util.List;
 public interface IClassService {
   List<Classes> list();
   Classes queryById(Integer id);
+  void  updateByCid(Integer cid);
 }

@@ -4,7 +4,7 @@ dubbo:
   application:
     name: webmanager
   registry:
-    address: zookeeper://192.168.211.128:2181
+    address: zookeeper://119.23.79.138:2181
 
   consumer:
     #首次启动不检查提供者是否存在

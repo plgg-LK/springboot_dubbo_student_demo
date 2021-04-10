@@ -8,4 +8,7 @@ import java.util.List;
 
 public interface IStuService {
   List<Student> list();
+  void addStudent(Student student);
+
+  void deleteById(Integer id);
 }
